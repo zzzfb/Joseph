@@ -2,14 +2,14 @@
 #include <iostream>
 using namespace std;
 
-void startGame(int n,int m)
+void startGame(int n,int m)//å…±nä¸ªäººï¼Œæ¯éš”ä¼ mæ¬¡æ·˜æ±°ä¸€äºº
 {
 	CircleList<int> cl;
 	for (int i = 1; i < n + 1; i++)
 	{
 		cl.push_back(i);
 	}
-	cout << "³ö¾ÖÍæ¼ÒÒÀ´ÎÊÇ£º" << endl;
+	cout << "å‡ºå±€ç©å®¶ä¾æ¬¡æ˜¯ï¼š" << endl;
 	Node<int>* p = cl.getRear()->next;
 	while (cl.getRear()->next != cl.getRear())
 	{
@@ -18,13 +18,13 @@ void startGame(int n,int m)
 		{
 			p = p->next;
 		}
-		Node<int>* q = p;//ÓÃq¼ÇÂ¼ÏÂÒªÉ¾³ıµÄ½Úµã
-		p = p->next;//´ÓÍË³öÈËµÄÏÂÒ»¸ö¿ªÊ¼´«µİ
+		Node<int>* q = p;//ç”¨qè®°å½•ä¸‹è¦åˆ é™¤çš„èŠ‚ç‚¹
+		p = p->next;//ä»é€€å‡ºäººçš„ä¸‹ä¸€ä¸ªå¼€å§‹ä¼ é€’
 		cout << q->data<<" ";
 		cl.pop(q);
 	}
 	cout << endl;
-	cout << "»ñÊ¤Íæ¼ÒÊÇ" << cl.getRear()->data << endl;
+	cout << "è·èƒœç©å®¶æ˜¯" << cl.getRear()->data << endl;
 	
 }
 int main()
